@@ -29,6 +29,12 @@ public class TestEofServletAPI extends HttpServlet {
     }
 
     public void init() throws ServletException {
+        String prefix = getServletContext().getRealPath("/");
+        // Log4J
+        String log4jFile = getServletConfig().getInitParameter("log4j");
+        String log4jConfigPath = prefix + log4jFile;
+        System.out.println("GlobalTool log4jConfigPath" + log4jConfigPath);
+
         int iRet = GlobalTool.init();
         if (iRet != 0) {
             System.out.println("GlobalTool init error");
