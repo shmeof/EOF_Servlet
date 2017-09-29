@@ -31,14 +31,14 @@ public class TestEofServletAPI extends HttpServlet {
     public void init() throws ServletException {
         // Log4J
         // 相对路径
-//        String prefix = getServletContext().getRealPath("/");
-//        String log4jFile = getServletConfig().getInitParameter("log4j");
-//        String log4jConfigPathRel = prefix + log4jFile;
+        String prefix = getServletContext().getRealPath("/");
+        String log4jFile = getServletConfig().getInitParameter("log4j");
+        String log4jConfigPathRel = prefix + log4jFile;
         // 绝对路径
-        String log4jConfigPathAbs = getServletConfig().getInitParameter("log4j");
-        System.out.println("GlobalTool log4jConfigPathAbs: " + log4jConfigPathAbs);
+//        String log4jConfigPathAbs = getServletConfig().getInitParameter("log4j");
+//        System.out.println("GlobalTool log4jConfigPathAbs: " + log4jConfigPathAbs);
         String propertiesfile = "global_cfg.conf";
-        int iRet = GlobalTool.init(log4jConfigPathAbs, propertiesfile);
+        int iRet = GlobalTool.init(log4jConfigPathRel, propertiesfile);
         if (iRet != 0) {
             System.out.println("GlobalTool init error");
             throw new ServletException("GlobalTool init err");
