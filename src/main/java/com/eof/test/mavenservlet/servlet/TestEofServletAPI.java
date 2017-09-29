@@ -32,6 +32,7 @@ public class TestEofServletAPI extends HttpServlet {
         int iRet = GlobalTool.init();
         if (iRet != 0) {
             System.out.println("init error");
+            throw new ServletException("GlobalTool init err");
         }
         ReturnCodeDefine.initMsg();
     }
