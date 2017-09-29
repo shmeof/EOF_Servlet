@@ -85,10 +85,10 @@ public class TestEofServletAPI extends HttpServlet {
     }
 
     private boolean checkParam(HttpServletResponse resp) {
-        if (param1 == null) {
-            pushResultJson(ReturnCodeDefine.PARAM_ERR, "user is null", null, resp);
-            return false;
-        }
+//        if (param1 == null) {
+//            pushResultJson(ReturnCodeDefine.PARAM_ERR, "user is null", null, resp);
+//            return false;
+//        }
         return true;
     }
 
@@ -124,6 +124,7 @@ public class TestEofServletAPI extends HttpServlet {
             logger.error("check params error");
             return;
         }
+
         JSONObject oResult = new JSONObject();
         long endtime = System.currentTimeMillis();
         pushResultJson(iRet, null, oResult, resp);
