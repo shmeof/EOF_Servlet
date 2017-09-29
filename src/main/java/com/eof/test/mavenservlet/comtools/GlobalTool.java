@@ -154,11 +154,11 @@ public class GlobalTool {
 
     public static int init() {
         String propertiesfile = "global_cfg.conf";
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            System.out.println("com.mysql.jdbc.Driver ClassNotFoundException" + e.toString());
-        }
+//        try {
+//            Class.forName("com.mysql.jdbc.Driver");
+//        } catch (ClassNotFoundException e) {
+//            System.out.println("com.mysql.jdbc.Driver ClassNotFoundException" + e.toString());
+//        }
         int iRet = GlobalTool.loadDBConfig(propertiesfile);
         if (iRet < 0) {
             System.out.println("init error");
