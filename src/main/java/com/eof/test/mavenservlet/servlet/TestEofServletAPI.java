@@ -33,9 +33,9 @@ public class TestEofServletAPI extends HttpServlet {
         // Log4J
         String log4jFile = getServletConfig().getInitParameter("log4j");
         String log4jConfigPath = prefix + log4jFile;
-        System.out.println("GlobalTool log4jConfigPath" + log4jConfigPath);
-
-        int iRet = GlobalTool.init();
+        System.out.println("GlobalTool log4jConfigPath: " + log4jConfigPath);
+        String propertiesfile = "global_cfg.conf";
+        int iRet = GlobalTool.init(log4jConfigPath, propertiesfile);
         if (iRet != 0) {
             System.out.println("GlobalTool init error");
             throw new ServletException("GlobalTool init err");

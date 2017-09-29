@@ -154,9 +154,14 @@ public class GlobalTool {
         return strCurrent;
     }
 
-    public static int init() {
+    /**
+     *
+     * @param log4jProperties
+     * @param propertiesfile
+     * @return
+     */
+    public static int init(final String log4jProperties, final String propertiesfile) {
         // 全局配置
-        String propertiesfile = "global_cfg.conf";
         int iRet = GlobalTool.loadDBConfig(propertiesfile);
         if (iRet < 0) {
             System.out.println("GlobalTool init error");
@@ -164,7 +169,7 @@ public class GlobalTool {
         }
 
         // log配置
-        PropertyConfigurator.configure("log4j.properties");
+        PropertyConfigurator.configure(log4jProperties);
         mLogger.info("init done");
         return 0;
     }
