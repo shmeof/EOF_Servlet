@@ -31,9 +31,11 @@ public class GlobalTool {
         try {
             property.load(new FileInputStream(strFile));
         } catch (FileNotFoundException e) {
+            System.out.println("GlobalTool e: " + e.toString());
             mLogger.error("exception:" + e);
             return -1;
         } catch (IOException e) {
+            System.out.println("GlobalTool e: " + e.toString());
             mLogger.error("exception:" + e);
             return -2;
         }
@@ -157,7 +159,7 @@ public class GlobalTool {
         String propertiesfile = "global_cfg.conf";
         int iRet = GlobalTool.loadDBConfig(propertiesfile);
         if (iRet < 0) {
-            System.out.println("init error");
+            System.out.println("GlobalTool init error");
             return iRet;
         }
 
