@@ -168,9 +168,9 @@ public class GlobalTool {
             return iRet;
         }
 
-        // log配置
-//        PropertyConfigurator.configure(log4jProperties);
-//        mLogger.info("init done");
+        // 初始化log4j：方法二
+        PropertyConfigurator.configure(log4jProperties);
+        mLogger.info("init done");
         return 0;
     }
 
