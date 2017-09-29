@@ -22,7 +22,7 @@ import java.util.Properties;
  * 默认配置加载
  */
 public class GlobalTool {
-    private static Logger logger = Logger.getLogger(GlobalTool.class);
+    private static Logger mLogger = Logger.getLogger(GlobalTool.class);
     private static Map<String, String> mConf = null;
 
     private static int loadPropertyFile(String strFile) {
@@ -31,10 +31,10 @@ public class GlobalTool {
         try {
             property.load(new FileInputStream(strFile));
         } catch (FileNotFoundException e) {
-            logger.error("exception:" + e);
+            mLogger.error("exception:" + e);
             return -1;
         } catch (IOException e) {
-            logger.error("exception:" + e);
+            mLogger.error("exception:" + e);
             return -2;
         }
         for (String key : property.stringPropertyNames()) {
@@ -88,12 +88,12 @@ public class GlobalTool {
     public static Connection initConn() {
         Connection conn = null;
         String strUrl = getDBUrl();
-        logger.info("dbUrl:" + strUrl);
+        mLogger.info("dbUrl:" + strUrl);
         try {
             conn = DriverManager.getConnection(strUrl, getKey("dbuser", "root"), getKey("dbpasswd", ""));
         } catch (SQLException e) {
             e.printStackTrace();
-            logger.error("initConn getConnection:" + strUrl, e);
+            mLogger.error("initConn getConnection:" + strUrl, e);
         }
         return conn;
     }
@@ -113,7 +113,7 @@ public class GlobalTool {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            logger.error("closeConn:", e);
+            mLogger.error("closeConn:", e);
         }
     }
 
@@ -153,19 +153,17 @@ public class GlobalTool {
     }
 
     public static int init() {
+        // 全局配置
         String propertiesfile = "global_cfg.conf";
-//        try {
-//            Class.forName("com.mysql.jdbc.Driver");
-//        } catch (ClassNotFoundException e) {
-//            System.out.println("com.mysql.jdbc.Driver ClassNotFoundException" + e.toString());
-//        }
         int iRet = GlobalTool.loadDBConfig(propertiesfile);
         if (iRet < 0) {
             System.out.println("init error");
             return iRet;
         }
+
+        // log配置
         PropertyConfigurator.configure("log4j.properties");
-        logger.info("init done");
+        mLogger.info("init done");
         return 0;
     }
 
@@ -173,6 +171,6 @@ public class GlobalTool {
      * @param args
      */
     public static void main(String[] args) {
-
+        //
     }
 }
