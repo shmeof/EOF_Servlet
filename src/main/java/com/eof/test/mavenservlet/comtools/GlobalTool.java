@@ -169,8 +169,8 @@ public class GlobalTool {
         }
 
         // log配置
-        PropertyConfigurator.configure(log4jProperties);
-        mLogger.info("init done");
+//        PropertyConfigurator.configure(log4jProperties);
+//        mLogger.info("init done");
         return 0;
     }
 
