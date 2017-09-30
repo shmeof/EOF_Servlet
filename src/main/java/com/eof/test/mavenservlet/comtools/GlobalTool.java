@@ -171,6 +171,14 @@ public class GlobalTool {
         // 初始化log4j：方法二
         PropertyConfigurator.configure(log4jProperties);
         mLogger.info("init done");
+
+        // 数据库Driver测试
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.println("com.mysql.jdbc.Driver ClassNotFoundException" + e.toString());
+            mLogger.error("com.mysql.jdbc.Driver ClassNotFoundException: " + e.toString());
+        }
         return 0;
     }
 
