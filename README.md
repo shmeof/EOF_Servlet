@@ -7,3 +7,6 @@
 	打开tomcat：/usr/local/tomcat/bin/startup.sh
 	查看tomcat：ps -ef | grep tomcat
 
+## 测试
+    访问： http://118.190.149.93:8080/TestMyServletAPI
+

@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.sql.Connection;
 
 /**
  * 测试Servlet API
@@ -19,7 +20,7 @@ import java.io.UnsupportedEncodingException;
  */
 public class TestEofServletAPI extends HttpServlet {
     private static final long serialVersionUID = -8296325742194492097L;
-    private static final Logger logger = Logger.getLogger(TestEofServletAPI.class);
+    private static final Logger mLogger = Logger.getLogger(TestEofServletAPI.class);
 
     private static String func = null;
     private static String param1 = null;
@@ -45,6 +46,16 @@ public class TestEofServletAPI extends HttpServlet {
         } else {
             System.out.println("GlobalTool init done");
         }
+
+        // 初始化数据库连接
+        Connection conn = GlobalTool.initConn();
+        if (null != conn) {
+            mLogger.info("conn:" + conn.hashCode());
+        } else {
+            mLogger.error("conn is null");
+        }
+
+        // 初始化错误码描述
         ReturnCodeDefine.initMsg();
     }
 
@@ -80,7 +91,7 @@ public class TestEofServletAPI extends HttpServlet {
         try {
             PrintWriter out = resp.getWriter();
             out.write(oResult.toString());
-            logger.info("done:" + oResult.toString());
+            mLogger.info("done:" + oResult.toString());
             out.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -109,7 +120,7 @@ public class TestEofServletAPI extends HttpServlet {
         func = request.getParameter("func");
         param1 = request.getParameter("param1");
 
-        logger.info("enter func=" + func + ",user=" + param1);
+        mLogger.info("enter func=" + func + ",user=" + param1);
     }
 
     /**
@@ -124,14 +135,14 @@ public class TestEofServletAPI extends HttpServlet {
         int iRet = -1;
         //检查参数
         if (!checkParam(resp)) {
-            logger.error("check params error");
+            mLogger.error("check params error");
             return;
         }
 
         JSONObject oResult = new JSONObject();
         long endtime = System.currentTimeMillis();
         pushResultJson(iRet, null, oResult, resp);
-        logger.info("TestEofServletAPI done:func=" + func + ",param1=" + param1 + ",spent time:" + (endtime - begintime) + "ms");
+        mLogger.info("TestEofServletAPI done:func=" + func + ",param1=" + param1 + ",spent time:" + (endtime - begintime) + "ms");
     }
 
     /**

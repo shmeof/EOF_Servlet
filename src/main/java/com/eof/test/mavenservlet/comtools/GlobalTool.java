@@ -92,7 +92,7 @@ public class GlobalTool {
         String strUrl = getDBUrl();
         mLogger.info("dbUrl:" + strUrl);
         try {
-            conn = DriverManager.getConnection(strUrl, getKey("dbuser", "root"), getKey("dbpasswd", ""));
+            conn = DriverManager.getConnection(strUrl, getKey("dbuser", "root"), getKey("dbpasswd", "123456"));
         } catch (SQLException e) {
             e.printStackTrace();
             mLogger.error("initConn getConnection:" + strUrl, e);
@@ -135,7 +135,7 @@ public class GlobalTool {
         try {
             addr = InetAddress.getLocalHost();
         } catch (UnknownHostException e) {
-            // TODO Auto-generated catch block
+            mLogger.error("getLocalIP()" + e.toString());
             e.printStackTrace();
             return "";
         }
