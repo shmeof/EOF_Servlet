@@ -124,11 +124,14 @@ public class GlobalTool {
 
     private static String getDBUrl() {
         String dbname = getKey("dbname", "eofs_db");
-        String dbIP = getKey("dbip", "127.0.0.1");
+        String dbIP = getKey("dbip", "localhost");
         String dbPort = getKey("dbport", "3306");
-        String urlparam = "";
         StringBuffer sb = new StringBuffer("jdbc:mysql://");
-        sb.append(dbIP).append(":").append(dbPort).append("/").append(dbname).append("?").append(urlparam);
+        String urlparam = "";
+        sb.append(dbIP).append(":").append(dbPort).append("/").append(dbname);
+        if (!urlparam.isEmpty()) {
+            sb.append("?").append(urlparam);
+        }
         return sb.toString();
     }
 
