@@ -55,6 +55,10 @@ public class TestEofServletAPI extends HttpServlet {
             mLogger.error("conn is null");
         }
 
+        // 测试mysql
+        MySQLDemo mysqldemo = new MySQLDemo();
+        mysqldemo.test();
+
         // 初始化错误码描述
         ReturnCodeDefine.initMsg();
     }

@@ -92,7 +92,10 @@ public class GlobalTool {
         String strUrl = getDBUrl();
         mLogger.info("dbUrl:" + strUrl);
         try {
-            conn = DriverManager.getConnection(strUrl, getKey("dbuser", "root"), getKey("dbpasswd", "123456"));
+            String dbuser = getKey("dbuser", "root");
+            String dbpasswd = getKey("dbpasswd", "123456");
+            mLogger.info("dbUrl:" + strUrl + " dbuser:" + dbuser + " dbpasswd:" + dbpasswd);
+            conn = DriverManager.getConnection(strUrl, getKey("dbuser", "root"), getKey("dbpasswd", "123"));
         } catch (SQLException e) {
             e.printStackTrace();
             mLogger.error("initConn getConnection:" + strUrl, e);
@@ -176,8 +179,8 @@ public class GlobalTool {
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
-            System.out.println("com.mysql.jdbc.Driver ClassNotFoundException" + e.toString());
-            mLogger.error("com.mysql.jdbc.Driver ClassNotFoundException: " + e.toString());
+            System.out.println("init:" + e.toString());
+            mLogger.error("init:" + e.toString());
         }
         return 0;
     }
