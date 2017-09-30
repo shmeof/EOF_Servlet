@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b49d00e2-1c47-440a-b00b-e1b00a1ecdc7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/global_cfg.conf" afterPath="$PROJECT_DIR$/global_cfg.conf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/comtools/GlobalTool.java" afterPath="$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/comtools/GlobalTool.java" />
     </list>
     <ignored path="test_maven_servlet.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,21 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="global_cfg.conf" pinned="false" current-in-tab="false">
+      <file leaf-file-name="global_cfg.conf" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/global_cfg.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+            <state relative-caret-position="95">
+              <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestEofServletAPI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestEofServletAPI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/servlet/TestEofServletAPI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
+            <state relative-caret-position="166">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -124,8 +123,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/servlet/TestEofServletAPI.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/servlet/MySQLDemo.java" />
         <option value="$PROJECT_DIR$/copy_libs.sh" />
-        <option value="$PROJECT_DIR$/global_cfg.conf" />
         <option value="$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/comtools/GlobalTool.java" />
+        <option value="$PROJECT_DIR$/global_cfg.conf" />
       </list>
     </option>
   </component>
@@ -943,14 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/global_cfg.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../all_env/Java/jdk_1.8.0.0_64/src.zip!/java/lang/String.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
@@ -982,8 +973,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eof/test/mavenservlet/servlet/TestEofServletAPI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="22" column="84" selection-start-line="22" selection-start-column="84" selection-end-line="22" selection-end-column="84" />
+        <state relative-caret-position="166">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global_cfg.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
           <folding />
         </state>
       </provider>
